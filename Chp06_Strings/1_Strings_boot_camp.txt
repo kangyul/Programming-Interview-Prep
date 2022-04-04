@@ -1,0 +1,28 @@
+Strings boot camp
+
+A palindromic string is one which reads the same when it is reversed
+The program below checks whether a string is palindromic.
+Rather than creating a new string for the reverse of the input string, it traverses the input string forwards and backwards.
+-> saving space
+
+bool IsPalindromic(const string& s) {
+    for (int i = 0, j = s.size() -1; i < j;, ++i, --j) {
+        if(s[i] != s[j]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+- n is the length of the string
+
+<Know your string libraries>
+When manipulating C++ strings, you need to know the string class well.
+
+* The basic methods are append("abc"), push_back('c'), pop_back(), insert(s.begin() + shift, "Gauss"), substr(pos, len), and compare("abc")
+* Remember a string is organized like an array. It performs well for operations from the back (push_back, pop_back)
+but poorly in the middle of a string (insert)
+* The comparison operators <, <=, >, >= and == can be applied to strings, with == testing logical equality, 
+rather than pointer equality
